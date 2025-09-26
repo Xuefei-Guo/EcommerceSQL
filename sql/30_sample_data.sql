@@ -1,5 +1,4 @@
 -- 30_sample_data.sql
--- Small but realistic seed data
 
 -- Users
 INSERT INTO users (email, full_name, created_at, country) VALUES
