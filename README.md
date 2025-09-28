@@ -1,7 +1,5 @@
 # E‑Commerce Analytics SQL (PostgreSQL)
 
-Modularized version of the monolithic SQL file.
-
 ## Structure
 - `sql/00_schema_and_extensions.sql` – schema, search_path, required extensions
 - `sql/10_tables.sql` – core tables
@@ -20,8 +18,4 @@ psql -d ecommerce_db -f sql/init.sql
 
 ## Notes
 - `search_path` is `ecommerce, public` so `citext` type resolves.
-- The refresh helper uses non-concurrent refresh. If you need online refresh, run manually:
-```sql
-CREATE UNIQUE INDEX IF NOT EXISTS uq_mv_monthly_kpis_month ON mv_monthly_kpis (month);
-REFRESH MATERIALIZED VIEW CONCURRENTLY ecommerce.mv_monthly_kpis;
-```
+- The refresh helper uses non-concurrent refresh. If you need online refresh, run manually；
